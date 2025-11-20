@@ -34,7 +34,7 @@ const sessionMiddleware = session({
   secret: 'supersecreto',
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: MONGO_URI }),
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   cookie: { maxAge: 1000 * 60 * 60 * 24 } // 1 día
 });
 app.use(sessionMiddleware);
